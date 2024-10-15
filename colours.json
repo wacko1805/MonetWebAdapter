@@ -1,0 +1,10 @@
+{
+    "colors": {
+        "primary": "#555", 
+        "onPrimary": "#555", 
+        "secondary": "#222", 
+        "onSecondary": "#666", 
+        "background": "#333", 
+        "surface": "#999"
+}
+}
