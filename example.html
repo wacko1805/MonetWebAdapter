@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="DynamicWebAdapter.js"></script>
+    <style>
+        .box {
+            border: 2px solid black;
+            margin: 5px;
+            text-align: center;
+            border-radius: 5px;
+            transition: 0.1s ease-in-out;
+        }
+        /* Primary Colors */
+        .primary {
+            background-color: var(--primary);
+        }
+
+        .onPrimary {
+            background-color: var(--onPrimary);
+        }
+
+        .primaryDark {
+            background-color: var(--primaryDark);
+        }
+
+        /* Secondary Colors */
+        .secondary {
+            background-color: var(--secondary);
+        }
+
+        .onSecondary {
+            background-color: var(--onSecondary);
+        }
+
+        /* Tertiary Colors */
+        .tertiary {
+            background-color: var(--tertiary);
+        }
+
+        .inverseTertiary {
+            background-color: var(--inverseTertiary);
+        }
+
+        /* Background and Surface */
+        .background {
+            background-color: var(--background);
+        }
+
+        .surface {
+            background-color: var(--surface);
+        }
+
+        .surfaceVariant {
+            background-color: var(--surfaceVariant);
+        }
+
+        /* Error Colors */
+        .error {
+            background-color: var(--error);
+        }
+
+        .onError {
+            background-color: var(--onError);
+        }
+
+        /* Surface-related Colors */
+        .onSurface {
+            background-color: var(--onSurface);
+        }
+
+        .onSurfaceVariant {
+            background-color: var(--onSurfaceVariant);
+        }
+
+        .outline {
+            background-color: var(--outline);
+        }
+
+        .inverseOnSurface {
+            background-color: var(--inverseOnSurface);
+        }
+
+        .inverseSurface {
+            background-color: var(--inverseSurface);
+        }
+
+        /* Text Colors */
+        .textColorPrimary {
+            background-color: var(--textColorPrimary);
+        }
+
+        .textColorSecondary {
+            background-color: var(--textColorSecondary);
+        }
+
+        .textColorTertiary {
+            background-color: var(--textColorTertiary);
+        }
+    </style>
+</head>
+<body>
+    <div class="example">
+        <h1>Dynamic Colours on the web!</h1>
+        <div class="box primary">
+            <p>Primary</p>
+        </div>
+        
+        <div class="box onPrimary">
+            <p>onPrimary</p>
+        </div>
+        
+        <div class="box primaryDark">
+            <p>primaryDark</p>
+        </div>
+        
+        <div class="box secondary">
+            <p>Secondary</p>
+        </div>
+        
+        <div class="box onSecondary">
+            <p>onSecondary</p>
+        </div>
+        
+        <div class="box tertiary">
+            <p>Tertiary</p>
+        </div>
+        
+        <div class="box inverseTertiary">
+            <p>inverseTertiary</p>
+        </div>
+        
+        <div class="box background">
+            <p>Background</p>
+        </div>
+        
+        <div class="box surface">
+            <p>Surface</p>
+        </div>
+        
+        <div class="box surfaceVariant">
+            <p>Surface Variant</p>
+        </div>
+        
+        <div class="box error">
+            <p>Error</p>
+        </div>
+        
+        <div class="box onError">
+            <p>onError</p>
+        </div>
+        
+        <div class="box onSurface">
+            <p>onSurface</p>
+        </div>
+        
+        <div class="box onSurfaceVariant">
+            <p>onSurfaceVariant</p>
+        </div>
+        
+        <div class="box outline">
+            <p>Outline</p>
+        </div>
+        
+        <div class="box inverseOnSurface">
+            <p>inverseOnSurface</p>
+        </div>
+        
+        <div class="box inverseSurface">
+            <p>inverseSurface</p>
+        </div>
+        
+        <div class="box textColorPrimary">
+            <p>textColorPrimary</p>
+        </div>
+        
+        <div class="box textColorSecondary">
+            <p>textColorSecondary</p>
+        </div>
+        
+        <div class="box textColorTertiary">
+            <p>textColorTertiary</p>
+        </div>
+        
+    </div>
+</body>
+</html>
