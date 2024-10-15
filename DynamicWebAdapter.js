@@ -1,3 +1,6 @@
+const jsonUrl = 'http://localhost:8192/';
+const localFilePath = 'colours.json';
+
 async function fetchColorsAndSetVariables(url, localFile) {
     const setCSSVariables = (colors) => {
       const root = document.documentElement; 
@@ -58,7 +61,6 @@ async function fetchColorsAndSetVariables(url, localFile) {
     checkUrlAndUpdateColors();
   }
   
-  const jsonUrl = 'http://localhost:8192/';
-  const localFilePath = 'colours.json';
+
   
   fetchColorsAndSetVariables(jsonUrl, localFilePath);
