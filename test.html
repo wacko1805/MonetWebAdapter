@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+async function fetchColorsAndSetVariables(url) {
+  try {
+
+    const response = await fetch(url);
+    const json = await response.json();
+
+    const colors = json.colors;
+
+    const setCSSVariables = (colors) => {
+      const root = document.documentElement; 
+
+      for (const [key, value] of Object.entries(colors)) {
+        root.style.setProperty(`--${key}`, value);
+      }
+    };
+
+    setCSSVariables(colors);
+
+    console.log('Colors:', colors);
+  } catch (error) {
+    console.error('Failed to fetch JSON:', error);
+  }
+}
+
+const jsonUrl = 'http://192.168.0.17:8192/';  
+
+fetchColorsAndSetVariables(jsonUrl);
+
+
+    </script>
+
+    <style>
+        .box {
+            border: 2px solid black;
+            margin: 5px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .Primary {
+            background-color: var(--primary);
+        }
+
+        .onPrimary {
+            background-color: var(--onPrimary);
+        }
+
+        .secondary {
+            background-color: var(--secondary);
+        }
+
+        .onSecondary {
+            background-color: var(--onSecondary);
+        }
+
+        .background {
+            background-color: var(--background);
+        }
+
+        .surface {
+            background-color: var(--surface);
+        }
+    </style>
+</head>
+<body>
+    <div class="example">
+
+        <div class="box Primary">
+            <p>Primary</p>
+        </div>
+
+        <div class="box onPrimary">
+            <p>onPrimary</p>
+        </div>
+
+        <div class="box secondary">
+            <p>secondary</p>
+        </div>
+
+        <div class="box onSecondary">
+            <p>onSecondary</p>
+        </div>
+
+        <div class="box background">
+            <p>background</p>
+        </div>
+
+        <div class="box surface">
+            <p>surface</p>
+        </div>
+    </div>
+</body>
+</html>
