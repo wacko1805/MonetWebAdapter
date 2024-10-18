@@ -62,8 +62,8 @@ function showPopup() {
 // Load external CSS stylesheet
 addExternalStylesheet('https://wacko1805.github.io/MonetWebAdapter/popup/popup.css'); // Replace with your actual URL
 
-// Show the popup if the cookie is not set
-if (isAndroid() && !getCookie('popupClosed')) {
+// Check URL and show the popup if conditions are met
+if (isAndroid() && !getCookie('popupClosed') && !window.location.href.includes("http://localhost:8192")) {
     document.addEventListener('DOMContentLoaded', function() {
         showPopup();
     });
