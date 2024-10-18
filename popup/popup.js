@@ -60,7 +60,7 @@ function showPopup() {
 }
 
 // Load external CSS stylesheet
-addExternalStylesheet('http://localhost/popup.css'); // Replace with your actual URL
+addExternalStylesheet('https://wacko1805.github.io/MonetWebAdapter/popup/popup.css'); // Replace with your actual URL
 
 // Show the popup if the cookie is not set
 if (isAndroid() && !getCookie('popupClosed')) {
