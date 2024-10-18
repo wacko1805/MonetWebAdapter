@@ -1,0 +1,107 @@
+/* Primary Colors */
+.primary {
+    background-color: var(--primary);
+}
+
+.onPrimary {
+    background-color: var(--onPrimary);
+}
+
+.primaryContainer {
+    background-color: var(--primaryContainer);
+}
+
+.onPrimaryContainer {
+    background-color: var(--onPrimaryContainer);
+}
+
+/* Secondary Colors */
+.secondary {
+    background-color: var(--secondary);
+}
+
+.onSecondary {
+    background-color: var(--onSecondary);
+}
+
+.secondaryContainer {
+    background-color: var(--secondaryContainer);
+}
+
+.onSecondaryContainer {
+    background-color: var(--onSecondaryContainer);
+}
+
+/* Tertiary Colors */
+.tertiary {
+    background-color: var(--tertiary);
+}
+
+.onTertiary {
+    background-color: var(--onTertiary);
+}
+
+/* Error Colors */
+.error {
+    background-color: var(--error);
+}
+
+.onError {
+    background-color: var(--onError);
+}
+
+/* Background and Surface */
+.background {
+    background-color: var(--background);
+}
+
+.onBackground {
+    background-color: var(--onBackground);
+}
+
+.surface {
+    background-color: var(--surface);
+}
+
+.onSurface {
+    background-color: var(--onSurface);
+}
+
+.surfaceVariant {
+    background-color: var(--surfaceVariant);
+}
+
+.onSurfaceVariant {
+    background-color: var(--onSurfaceVariant);
+}
+
+/* Outline and Inverse */
+.outline {
+    background-color: var(--outline);
+}
+
+.inverseOnSurface {
+    background-color: var(--inverseOnSurface);
+}
+
+.inverseSurface {
+    background-color: var(--inverseSurface);
+}
+
+/* Text Colors */
+.textColorPrimary {
+    background-color: var(--textColorPrimary);
+}
+
+.textColorSecondary {
+    background-color: var(--textColorSecondary);
+}
+
+.textColorTertiary {
+    background-color: var(--textColorTertiary);
+}
+
+/* Additional */
+.surfaceTint {
+    background-color: var(--surfaceTint);
+}

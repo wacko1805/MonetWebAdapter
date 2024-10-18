@@ -1,28 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+    border-radius: 15px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--primaryContainer);
+    border-radius: 15px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+  }
+  
+h1 {
+    color: var(--primary);
+}
 html {
 
 }
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--background);
+    background-color: var(--surface);
     font-family: poppins;
 }
 header {
-    background-color: var(--primary);
+    background-color: var(--primaryContainer);
+    font-family: "Lexend", sans-serif;
+    padding: 20px 30px;
+    
+}
+header .links {
+    overflow-y: hidden;
     padding: 10px;
+    overflow-x: scroll;
+    width: 100vw;
+    white-space: nowrap;
+}
+
+header .links a {
+    text-decoration: none;
+    color: var(--secondary);
+    padding: 1.5px 15px;
+    transition: 0.2s;
+    border: 2px solid var(--secondary);
+    border-radius: 30px;
+    
+}
+
+header .links a:hover {
+    border-bottom: none;
+    background-color: var(--tertiary);
+    color: var(--onTertiary);
+}
+
+main {
+    margin-left: 5vw;
+    margin-right: 5vw;
 }
 
 header h1 {
-    color: var(--onPrimary);
+    font-weight: 600;
+    color: var(--onPrimaryContainer);
     margin: 0;
 }
 
 .card {
-    border-radius: 20px;
-    padding: 30px;
-    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
     background-color: var(--secondaryContainer);
 }
 
@@ -56,4 +110,14 @@ button:hover {
     background-color: var(--tertiary);
     color: var(--onTertiary);
     cursor: pointer;
+}
+
+.example {
+    padding: 5px 25px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.example .desc {
+    color: auto;
 }

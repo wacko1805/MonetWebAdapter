@@ -6,15 +6,89 @@
     <title>Document</title>
     <script src="DynamicWebAdapter.js"></script>
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/colours.css">
 </head>
 <body>
     <header>
-        <h1>Monet Web Adapter example</h1>
-    </header>
+        <h1>Monet Web Adapter</h1>
+<!-- 
+        <div class="links">
+            <a href="#">For Devs</a>
+            <a href="#">For Users</a>
+            <a href="#">View Example</a>
+        </div> -->
 
-    <div class="card">
-        <h3>If you are viewing this website on a device with the adapter app installed and running, it should match your phones dynamic colours. The site should work with dark and light mode. If no adapter is detected, it will default to the colours.json variables. </h3>
-        <a href="example.html"><button>View all colours!</button></a>
-    </div>
+    </header>
+    <br>
+    <main>
+        <div class="card">
+            <h3>If you are viewing this website on a device with the adapter app installed and running, it should match your phones dynamic colours. The site should work with dark and light mode. If no adapter is detected, it will default to the colours.json variables. </h3>
+            <a href="example.html"><button>View all colours!</button></a>
+        </div>
+
+        <h1>Examples:</h1>
+
+        <div class="example primary">
+            <h2 style="color:var(--onPrimary)">OnPrimary</h2>
+            <p class="desc">Primary</p>
+        </div>
+        
+        <div class="example primaryContainer">
+            <h2 style="color:var(--onPrimaryContainer)">OnPrimaryContainer</h2>
+            <p class="desc">PrimaryContainer</p>
+        </div>
+        
+        <div class="example secondary">
+            <h2 style="color:var(--onSecondary)">OnSecondary</h2>
+            <p class="desc">Secondary</p>
+        </div>
+        
+        <div class="example secondaryContainer">
+            <h2 style="color:var(--onSecondaryContainer)">OnSecondaryContainer</h2>
+            <p class="desc">SecondaryContainer</p>
+        </div>
+        
+        <div class="example tertiary">
+            <h2 style="color:var(--onTertiary)">OnTertiary</h2>
+            <p class="desc">Tertiary</p>
+        </div>
+        
+        
+        <div class="example error">
+            <h2 style="color:var(--onError)">OnError</h2>
+            <p class="desc">Error</p>
+        </div>
+        
+        <div class="example background">
+            <h2 style="color:var(--onBackground)">OnBackground</h2>
+            <p class="desc">Background</p>
+        </div>
+        
+        <div class="example surface">
+            <h2 style="color:var(--onSurface)">OnSurface</h2>
+            <p class="desc">Surface</p>
+        </div>
+        
+        <div class="example surfaceVariant">
+            <h2 style="color:var(--onSurfaceVariant)">OnSurfaceVariant</h2>
+            <p class="desc">SurfaceVariant</p>
+        </div>
+        
+        <div class="example outline">
+            <p class="desc">Outline</p>
+        </div>
+        
+        <div class="example inverseSurface">
+            <h2 style="color:var(--inverseOnSurface)">InverseOnSurface</h2>
+            <p class="desc">InverseSurface</p>
+        </div>
+        
+        <div class="example surfaceTint">
+            <p class="desc">SurfaceTint</p>
+        </div>
+     
+    </main>
+
+
 </body>
 </html>
