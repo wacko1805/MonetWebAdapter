@@ -15,8 +15,8 @@
     background-color: var(--primaryContainer);
     position: fixed;
     top: 30vh;
-    left: 45vw;
-    right: 45vw;
+    left: 15vw;
+    right: 15vw;
     z-index: 1000;
     padding: 20px;
     border-radius: 15px;
