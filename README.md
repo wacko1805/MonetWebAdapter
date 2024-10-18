@@ -6,8 +6,8 @@
 - If the app is not installed, or on a device that doesnt support dynamic colours, computers, apple devices, etc, the web adapter will load the pre-defined colours set by the developer.
 - The first screenshot shows the colours loaded from the ```colours.json``` shown below. The second screenshot shows dynamic colours loaded from the Host app.
   
-<img src="https://github.com/wacko1805/MonetWebAdapter/blob/main/assets/images/local.png?raw=true" width="49%" alt="local">
-<img src="https://github.com/wacko1805/MonetWebAdapter/blob/main/assets/images/connected.png?raw=true" width="49%" alt="connected">
+<img src="https://github.com/wacko1805/MonetWebAdapter/blob/main/assets/images/local.png?raw=true" width="45%" alt="local">
+<img src="https://github.com/wacko1805/MonetWebAdapter/blob/main/assets/images/connected.png?raw=true" width="45%" alt="connected">
 
   
 ## How it works for you:
