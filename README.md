@@ -4,7 +4,8 @@
 ## How does it work?
 - If the host app is installed on a device, the site will load the devices colours. The app starts a minimal http server that broadcasts the dynamic colours to ``` http://localhost:8192 ```
 - If the app is not installed, or on a device that doesnt support dynamic colours, computers, apple devices, etc, the web adapter will load the pre-defined colours set by the developer.
-- The first screenshot shows the colours loaded from the ```colours.json``` shown below. The second screenshot shows dynamic colours loaded from the Host app. 
+- The first screenshot shows the colours loaded from the ```colours.json``` shown below. The second screenshot shows dynamic colours loaded from the Host app.
+  
 ![local](https://github.com/wacko1805/MonetWebAdapter/blob/main/assets/images/local.png?raw=true)
 ![connected](https://github.com/wacko1805/MonetWebAdapter/blob/main/assets/images/connected.png?raw=true)
 
