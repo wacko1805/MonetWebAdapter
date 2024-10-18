@@ -42,7 +42,7 @@ function showPopup() {
     popup.className = 'popup'; 
 
     popup.innerHTML = `
-        <h2>This site support your phones Dynamic Wallpaper Colours!</h2>
+        <h2>This site supports your phones Dynamic Wallpaper Colours!</h2>
         <p>Download the Free and open source MonetWebAdapter app to view this website in your personalised colours! <a href="https://github.com/wacko1805/MonetWebAdapter">Learn more.</a></p>
         <a href="https://github.com/wacko1805/MonetWebHost/releases"><button>Download Now!</button></a>
         <button id="closePopup">Close</button>
