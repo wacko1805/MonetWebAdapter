@@ -3,15 +3,12 @@ function isAndroid() {
     return /Android/i.test(userAgent);
 }
 
-function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-        const date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+function setCookie(name, value) {
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1); // Set expiration to one year from now
+    document.cookie = name + "=" + (value || "") + "; expires=" + expires.toUTCString() + "; path=/";
 }
+
 
 function getCookie(name) {
     const nameEQ = name + "=";
@@ -62,8 +59,8 @@ function showPopup() {
 // Load external CSS stylesheet
 addExternalStylesheet('https://wacko1805.github.io/MonetWebAdapter/popup/popup.css'); // Replace with your actual URL
 
-// Check URL and show the popup if conditions are met
-if (isAndroid() && !getCookie('popupClosed') && !window.location.href.includes("http://localhost:8192")) {
+// Check if the current environment is Android, the popup has not been closed, and the URL is not localhost:8192
+if (isAndroid() && !getCookie('popupClosed') && !window.location.href.startsWith("http://localhost:8192")) {
     document.addEventListener('DOMContentLoaded', function() {
         showPopup();
     });
