@@ -26,37 +26,123 @@
   ```
 - If you use CSS variables on your site, than it should be easy to migrate all your exsisting colours to the ``` colours.json ``` file. If not, you may have to modify your site to use the material 3 colour way and naming.
 - ### Important: The ``` colours.json ``` Must be placed in the root directory of the site!
+
+- ### How to Make a new theme using the generator:
+  - Generate a new theme on the [Material Theme Buildier](https://material-foundation.github.io/material-theme-builder/).
+  - Export your theme in a JSON format
+  - Place the JSON file in your sites root directory, and rename it to ``` colours.json ```.
 - Layout of ``` colours.json ```:
 
-  ```{
-      "Comments": "Define your sites colours here:",
-      "colors": {
-        "primary": "#974811",
-        "onPrimary": "#FFFFFF",
-        "primaryContainer": "#FFDBCA",
-        "onPrimaryContainer": "#773300",
-        "secondary": "#8C4E29",
-        "onSecondary": "#FFFFFF",
-        "secondaryContainer": "#FFDBCA",
-        "onSecondaryContainer": "#6F3714",
-        "tertiary": "#6E5D0E",
-        "onTertiary": "#FFFFFF",
-        "error": "#B3261E",
-        "onError": "#FFFFFF",
-        "background": "#FFF9EE",
-        "onBackground": "#1F1B0D",
-        "surface": "#FFF9EE",
-        "onSurface": "#1F1B0D",
-        "surfaceVariant": "#EEE2BC",
-        "onSurfaceVariant": "#4E472A",
-        "outline": "#807757",
-        "inverseOnSurface": "#EBE2CB",
-        "inverseSurface": "#171306",
-        "surfaceTint": "#974811"
-      }
-    }
   ```
-- Here, you must define all your colours. Either by your exsisting colour ways, or you can build a new theme. The [Material Theme Buildier](https://material-foundation.github.io/material-theme-builder/) is a handy tool to create new themes. They allow you to download your theme in a JSON format with the correct names, but you have to choose only one varient, ie lightmode, darkmode, etc.
+    {
+    "schemes": {
+        "light": {
+            "primary": "#6D5E0F",
+            "surfaceTint": "#6D5E0F",
+            "onPrimary": "#FFFFFF",
+            "primaryContainer": "#F8E287",
+            "onPrimaryContainer": "#221B00",
+            "secondary": "#665E40",
+            "onSecondary": "#FFFFFF",
+            "secondaryContainer": "#EEE2BC",
+            "onSecondaryContainer": "#211B04",
+            "tertiary": "#43664E",
+            "onTertiary": "#FFFFFF",
+            "tertiaryContainer": "#C5ECCE",
+            "onTertiaryContainer": "#00210F",
+            "error": "#BA1A1A",
+            "onError": "#FFFFFF",
+            "errorContainer": "#FFDAD6",
+            "onErrorContainer": "#410002",
+            "background": "#FFF9EE",
+            "onBackground": "#1E1B13",
+            "surface": "#FFF9EE",
+            "onSurface": "#1E1B13",
+            "surfaceVariant": "#EAE2D0",
+            "onSurfaceVariant": "#4B4739",
+            "outline": "#7C7767",
+            "outlineVariant": "#CDC6B4",
+            "shadow": "#000000",
+            "scrim": "#000000",
+            "inverseSurface": "#333027",
+            "inverseOnSurface": "#F7F0E2",
+            "inversePrimary": "#DBC66E",
+            "primaryFixed": "#F8E287",
+            "onPrimaryFixed": "#221B00",
+            "primaryFixedDim": "#DBC66E",
+            "onPrimaryFixedVariant": "#534600",
+            "secondaryFixed": "#EEE2BC",
+            "onSecondaryFixed": "#211B04",
+            "secondaryFixedDim": "#D1C6A1",
+            "onSecondaryFixedVariant": "#4E472A",
+            "tertiaryFixed": "#C5ECCE",
+            "onTertiaryFixed": "#00210F",
+            "tertiaryFixedDim": "#A9D0B3",
+            "onTertiaryFixedVariant": "#2C4E38",
+            "surfaceDim": "#E0D9CC",
+            "surfaceBright": "#FFF9EE",
+            "surfaceContainerLowest": "#FFFFFF",
+            "surfaceContainerLow": "#FAF3E5",
+            "surfaceContainer": "#F4EDDF",
+            "surfaceContainerHigh": "#EEE8DA",
+            "surfaceContainerHighest": "#E8E2D4"
+        },
+        "dark": {
+            "primary": "#DBC66E",
+            "surfaceTint": "#DBC66E",
+            "onPrimary": "#3A3000",
+            "primaryContainer": "#534600",
+            "onPrimaryContainer": "#F8E287",
+            "secondary": "#D1C6A1",
+            "onSecondary": "#363016",
+            "secondaryContainer": "#4E472A",
+            "onSecondaryContainer": "#EEE2BC",
+            "tertiary": "#A9D0B3",
+            "onTertiary": "#143723",
+            "tertiaryContainer": "#2C4E38",
+            "onTertiaryContainer": "#C5ECCE",
+            "error": "#FFB4AB",
+            "onError": "#690005",
+            "errorContainer": "#93000A",
+            "onErrorContainer": "#FFDAD6",
+            "background": "#15130B",
+            "onBackground": "#E8E2D4",
+            "surface": "#15130B",
+            "onSurface": "#E8E2D4",
+            "surfaceVariant": "#4B4739",
+            "onSurfaceVariant": "#CDC6B4",
+            "outline": "#969080",
+            "outlineVariant": "#4B4739",
+            "shadow": "#000000",
+            "scrim": "#000000",
+            "inverseSurface": "#E8E2D4",
+            "inverseOnSurface": "#333027",
+            "inversePrimary": "#6D5E0F",
+            "primaryFixed": "#F8E287",
+            "onPrimaryFixed": "#221B00",
+            "primaryFixedDim": "#DBC66E",
+            "onPrimaryFixedVariant": "#534600",
+            "secondaryFixed": "#EEE2BC",
+            "onSecondaryFixed": "#211B04",
+            "secondaryFixedDim": "#D1C6A1",
+            "onSecondaryFixedVariant": "#4E472A",
+            "tertiaryFixed": "#C5ECCE",
+            "onTertiaryFixed": "#00210F",
+            "tertiaryFixedDim": "#A9D0B3",
+            "onTertiaryFixedVariant": "#2C4E38",
+            "surfaceDim": "#15130B",
+            "surfaceBright": "#3C3930",
+            "surfaceContainerLowest": "#100E07",
+            "surfaceContainerLow": "#1E1B13",
+            "surfaceContainer": "#222017",
+            "surfaceContainerHigh": "#2D2A21",
+            "surfaceContainerHighest": "#38352B"
+        }
+      }
+  }
+
+  ```
+- Here, you must define all your colours. Either by your exsisting colour ways, or you can build a new theme. The [Material Theme Buildier](https://material-foundation.github.io/material-theme-builder/) is a handy tool to create new themes. 
 
 ## Using colours in your css:
 - Each JSON property is the name of the CSS variable!
@@ -77,6 +163,8 @@
   ```
   <script src="https://wacko1805.github.io/MonetWebAdapter/popup/popup.js" defer></script>
   ```
+
+  ### Example of the popup can be found [here](https://wacko1805.github.io/MonetWebAdapter/popup-test.html).
 
   
 
