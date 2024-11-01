@@ -42,27 +42,30 @@ async function fetchColorsAndSetVariables(url, localFile) {
         return prefersDarkScheme ? schemes.dark : schemes.light;
     };
 
-    const checkUrlAndUpdateColors = async () => {
+    const updateColors = async () => {
+        // Try to fetch from URL
         let colors = await fetchData(url);
         if (colors) {
             setCSSVariables(colors);
             console.log('Colors updated from URL:', colors);
-        } else {
-            console.log('Failed to update from URL, trying local file...');
-            const localSchemes = await loadLocalFile(localFile);
-            if (localSchemes) {
-                const colors = getColorsForScheme(localSchemes);
-                setCSSVariables(colors);
-                console.log('Colors loaded from local file:', colors);
-            }
         }
-
-        // Retry the URL check every 5 seconds
-        setTimeout(checkUrlAndUpdateColors, 5000); 
     };
 
-    // Initial check from the URL
-    checkUrlAndUpdateColors();
+    const initialLoad = async () => {
+        // Load the local file first
+        const localSchemes = await loadLocalFile(localFile);
+        if (localSchemes) {
+            const colors = getColorsForScheme(localSchemes);
+            setCSSVariables(colors);
+            console.log('Colors loaded from local file:', colors);
+        }
+
+        // Start fetching from URL every 5 seconds
+        setInterval(updateColors, 3000);
+    };
+
+    // Initial load of the local file
+    initialLoad();
 }
 
 fetchColorsAndSetVariables(jsonUrl, localFilePath);
