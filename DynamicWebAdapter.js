@@ -13,8 +13,6 @@ fetch(`${basePath}/DWAconfig.json`)  // Always fetch from the root
     console.error('Error fetching the JSON:', error);
   });
 
-
-
 async function fetchColorsAndSetVariables(url, localFile) {
     const setCSSVariables = (colors) => {
         const root = document.documentElement; 
@@ -74,8 +72,11 @@ async function fetchColorsAndSetVariables(url, localFile) {
             console.log('Colors loaded from local file:', colors);
         }
 
+        // Fetch initial colors from the URL immediately
+        await updateColors();
+
         // Start fetching from URL every 5 seconds
-        setInterval(updateColors, 3000);
+        setInterval(updateColors, 5000); // Adjusted to 5 seconds for the interval
     };
 
     // Initial load of the local file
