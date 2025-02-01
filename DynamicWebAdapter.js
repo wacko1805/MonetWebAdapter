@@ -75,7 +75,7 @@ async function fetchColorsAndSetVariables(url, localFile) {
         }
 
         // Start fetching from URL every 5 seconds
-        // setInterval(updateColors, 3000);
+        setInterval(updateColors, 3000);
     };
 
     // Initial load of the local file
