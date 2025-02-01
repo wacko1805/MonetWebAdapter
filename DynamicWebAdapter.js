@@ -1,5 +1,19 @@
 const jsonUrl = 'http://localhost:8192/';
-const localFilePath = '/colours.json';
+
+// Get external colours.json file from config page.
+const basePath = window.location.origin;  // Gets the base URL of the current page
+fetch(`${basePath}/DWAconfig.json`)  // Always fetch from the root
+  .then(response => response.json())
+  .then(data => {
+    const localFilePath = data.colours_path;
+    console.log(localFilePath);
+    fetchColorsAndSetVariables(jsonUrl, localFilePath);
+  })
+  .catch(error => {
+    console.error('Error fetching the JSON:', error);
+  });
+
+
 
 async function fetchColorsAndSetVariables(url, localFile) {
     const setCSSVariables = (colors) => {
@@ -61,7 +75,7 @@ async function fetchColorsAndSetVariables(url, localFile) {
         }
 
         // Start fetching from URL every 5 seconds
-        setInterval(updateColors, 3000);
+        // setInterval(updateColors, 3000);
     };
 
     // Initial load of the local file
