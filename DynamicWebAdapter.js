@@ -1,8 +1,9 @@
-const jsonUrl = 'http://localhost:8192/';
-
+const jsonUrl = 'http://localhost:8192/'; // DO NOT CHANGE THIS Defines URL from host app 
+const configFile = 'DWAconfig.json'; // Define your config file here
 // Get external colours.json file from config page.
-const basePath = window.location.origin;  // Gets the base URL of the current page
-fetch(`${basePath}/DWAconfig.json`)  // Always fetch from the root
+
+const basePath = window.location.origin; 
+fetch(`${basePath}/${configFile}`)  
   .then(response => response.json())
   .then(data => {
     const localFilePath = data.colours_path;
@@ -28,7 +29,7 @@ async function fetchColorsAndSetVariables(url, localFile) {
                 throw new Error('Network response was not ok');
             }
             const json = await response.json();
-            return json.colors; // Return the colors object directly
+            return json.colors; 
         } catch (error) {
             console.error('Failed to fetch from URL:', error);
             return null;
@@ -42,7 +43,7 @@ async function fetchColorsAndSetVariables(url, localFile) {
                 throw new Error('Failed to load local file');
             }
             const json = await response.json();
-            return json.schemes; // Return the schemes object for dark/light mode
+            return json.schemes; 
         } catch (error) {
             console.error('Failed to load local file:', error);
             return null;
@@ -55,7 +56,7 @@ async function fetchColorsAndSetVariables(url, localFile) {
     };
 
     const updateColors = async () => {
-        // Try to fetch from URL
+       
         let colors = await fetchData(url);
         if (colors) {
             setCSSVariables(colors);
@@ -64,7 +65,6 @@ async function fetchColorsAndSetVariables(url, localFile) {
     };
 
     const initialLoad = async () => {
-        // Load the local file first
         const localSchemes = await loadLocalFile(localFile);
         if (localSchemes) {
             const colors = getColorsForScheme(localSchemes);
@@ -72,14 +72,11 @@ async function fetchColorsAndSetVariables(url, localFile) {
             console.log('Colors loaded from local file:', colors);
         }
 
-        // Fetch initial colors from the URL immediately
         await updateColors();
 
-        // Start fetching from URL every 5 seconds
-        setInterval(updateColors, 5000); // Adjusted to 5 seconds for the interval
+        setInterval(updateColors, 5000); 
     };
 
-    // Initial load of the local file
     initialLoad();
 }
 

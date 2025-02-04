@@ -57,7 +57,9 @@ function showPopup() {
 }
 
 // Load external CSS stylesheet
-addExternalStylesheet('https://wacko1805.github.io/MonetWebAdapter/popup/popup.css'); // Replace with your actual URL
+        // addExternalStylesheet('https://wacko1805.github.io/MonetWebAdapter/popup/popup.css'); 
+        addExternalStylesheet('http://127.0.0.1:3000/popup/popup.css'); // local for testing
+
 
 // Check if the current environment is Android, the popup has not been closed, and the URL is not localhost:8192
 if (isAndroid() && !getCookie('popupClosed') && !window.location.href.startsWith("http://localhost:8192")) {

@@ -1,4 +1,4 @@
-![MWALogo](https://raw.githubusercontent.com/wacko1805/MonetWebAdapter/refs/heads/main/assets/images/MWA%20logo.png)
+![MWALogo](https://raw.githubusercontent.com/wacko1805/MonetWebAdapter/refs/heads/main/HomePage/assets/images/MWA%20logo.png)
 ### MWA allows the Dynamic Wallpaper Colours from android 12 and up on the web! [View Example Site](https://wacko1805.github.io/MonetWebAdapter/)
 
 ## How does it work?
@@ -6,7 +6,7 @@
 - If the app is not installed, or on a device that doesnt support dynamic colours, computers, apple devices, etc, the web adapter will load the pre-defined colours set by the developer.
 - The first screenshot shows the colours loaded from the ```colours.json``` shown below. The second screenshot shows dynamic colours loaded from the Host app.
   
-<img src="https://github.com/wacko1805/MonetWebAdapter/blob/main/assets/images/local.png?raw=true" width="30%" alt="local"><img src="https://github.com/wacko1805/MonetWebAdapter/blob/main/assets/images/connected.png?raw=true" width="30%" alt="connected">
+<img src="https://github.com/wacko1805/MonetWebAdapter/blob/main/HomePage/assets/images/local.png?raw=true" width="30%" alt="local"><img src="https://github.com/wacko1805/MonetWebAdapter/blob/main/HomePage/assets/images/connected.png?raw=true" width="30%" alt="connected">
 
   
 ## How it works for you:
@@ -21,11 +21,32 @@
 - Download the script file [here](https://github.com/wacko1805/MonetWebAdapter/DynamicWebAdapter.js) and implement it between the ``` <head> </head> ``` tags. For example,
   ```
   <head>
-  <script src="assets/js/DynamicWebAdapter.js"></script>
+  <script src="/DynamicWebAdapter.js"></script>
   </head>
   ```
+  Alternatively, 
+  ```
+  <script src="https://jacks.am/MonetWebAdapter/DynamicWebAdapter.js"></script>
+  ```
+  * Please note, doing it this way means your config file MUST be in the root directory. 
+- Next, create a JSON config file called ``` DWAconfig.json ``` . This file can be used to change some configs. Right now, its only set up to change the location of the ``` colours.json ``` file.
+Layout of config file: 
+  ``` 
+  {
+      "colours_path": "colours.json"
+  } 
+  ```
+  Here, you can link your colours json file. 
+  
+  In the script file, if you need, you can change the directory of the config file. By default, it will search for the config file in root. You can change this location from in the script file as below: 
+
+  ```
+  const configFile = 'DWAconfig.json';  
+  ```
+
+
 - If you use CSS variables on your site, than it should be easy to migrate all your exsisting colours to the ``` colours.json ``` file. If not, you may have to modify your site to use the material 3 colour way and naming.
-- ### Important: The ``` colours.json ``` Must be placed in the root directory of the site!
+
 
 - ### How to Make a new theme using the generator:
   - Generate a new theme on the [Material Theme Buildier](https://material-foundation.github.io/material-theme-builder/).

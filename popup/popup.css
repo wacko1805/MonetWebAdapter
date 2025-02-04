@@ -18,8 +18,8 @@
     left: 15vw;
     right: 15vw;
     z-index: 1000;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 30px;
     font-family: "Lexend", sans-serif;
 }
 @media screen and (max-width: 600px) {
@@ -35,7 +35,7 @@
 
 .popup p {
     color: var(--onPrimaryContainer);
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .popup a {
@@ -43,12 +43,12 @@
 }
 .popup button {
     font-family: "Lexend", sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border: none;
     background-color: var(--secondary);
     color: var(--onSecondary);
-    padding: 5px 15px;
-    border-radius: 15px;
+    padding: 15px 20px;
+    border-radius: 25px;
     transition: 0.1s;
 }
 

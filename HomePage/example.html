@@ -9,12 +9,21 @@
     <link rel="stylesheet" href="assets/styles.css">
 
     <style>
+
+        .example {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            }
         .box {
-            border: 2px solid black;
+            flex: 1 1 23%; /* Flex-grow, flex-shrink, and flex-basis */
             margin: 5px;
             text-align: center;
-            border-radius: 5px;
+            padding: 4px;
+            border-radius: 10px;
             transition: 0.1s ease-in-out;
+            color: auto;
+            
         }
 /* Primary Colors */
 .primary {
@@ -127,8 +136,13 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Monet Web Adapter</h1>
+
+    </header>
+    <br>
+    <main>
     <div class="example">
-        <h1>Dynamic Colours on the web!</h1>
         <div class="box primary">
             <p>Primary</p>
         </div>
@@ -221,5 +235,6 @@
         
         
     </div>
+</main>
 </body>
 </html>
