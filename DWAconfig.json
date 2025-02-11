@@ -1,3 +1,4 @@
 {
-    "colours_path": "../colours.json"
+    "colours_path": "../colours.json",
+    "theme_pref": "auto"
 }

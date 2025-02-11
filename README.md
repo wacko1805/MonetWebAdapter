@@ -29,12 +29,25 @@
   <script src="https://jacks.am/MonetWebAdapter/DynamicWebAdapter.js"></script>
   ```
   * Please note, doing it this way means your config file MUST be in the root directory. 
-- Next, create a JSON config file called ``` DWAconfig.json ``` . This file can be used to change some configs. Right now, its only set up to change the location of the ``` colours.json ``` file.
-Layout of config file: 
-  ``` 
-  {
-      "colours_path": "colours.json"
-  } 
+- ## Config File: 
+  The config file allows you to change some settings. This is optional, if no config file is found, it will default to the root directory for the ```colours.json``` file. The config file , by default, should be called ``` DWAconfig.json ``` . 
+  
+  ### Usage of the config file:
+  1. ``` colours_path ``` defines the file location and name of the source colours JSON file. This will make more sence in the next step. By default, if this is not defined, it will default to ``` colours.json ``` in the root directory. 
+  2. ``` theme_pref ``` defines that colour scheme is set for the colours. The script allows automatic light/dark mode setting, but this can be changed here. 
+  Supported Schemes:
+      * ``` auto ``` Auto light and dark mode setting
+      * ``` light ```
+      * ``` dark ```
+
+   If this is not defined, orconfig file not found, it will default to auto. 
+
+  Layout of an example config file: 
+    ``` 
+    {
+        "colours_path": "assets/colours.json",
+        "theme_pref": "auto"
+    } 
   ```
   Here, you can link your colours json file. 
   
@@ -51,7 +64,7 @@ Layout of config file:
 - ### How to Make a new theme using the generator:
   - Generate a new theme on the [Material Theme Buildier](https://material-foundation.github.io/material-theme-builder/).
   - Export your theme in a JSON format
-  - Place the JSON file in your sites root directory, and rename it to ``` colours.json ```.
+  - Place the JSON file in your sites root directory and rename it to ``` colours.json ```, or as stated above, define    your file location in the config file. 
 - Layout of ``` colours.json ```:
 
   ```

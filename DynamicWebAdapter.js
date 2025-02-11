@@ -1,17 +1,30 @@
 const jsonUrl = 'http://localhost:8192/'; // DO NOT CHANGE THIS Defines URL from host app 
 const configFile = 'DWAconfig.json'; // Define your config file here
-// Get external colours.json file from config page.
 
-const basePath = window.location.origin; 
-fetch(`${basePath}/${configFile}`)  
-  .then(response => response.json())
+const basePath = window.location.origin;  
+
+let themePref;  
+let localFilePath;
+
+fetch(`${basePath}/${configFile}`)   // gathers data from config file
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Config file not found');
+    }
+    return response.json();
+  })
   .then(data => {
-    const localFilePath = data.colours_path;
-    console.log(localFilePath);
+    localFilePath = data.colours_path;
+    themePref = data.theme_pref;
+    // console.log(localFilePath);
+    // console.log(themePref);
     fetchColorsAndSetVariables(jsonUrl, localFilePath);
   })
   .catch(error => {
     console.error('Error fetching the JSON:', error);
+    localFilePath = '/colours.json';  // default value 
+    themePref = 'auto'; // default value
+    fetchColorsAndSetVariables(jsonUrl, localFilePath);
   });
 
 async function fetchColorsAndSetVariables(url, localFile) {
@@ -50,9 +63,28 @@ async function fetchColorsAndSetVariables(url, localFile) {
         }
     };
 
-    const getColorsForScheme = (schemes) => {
+    const getColorsForScheme = (schemes) => { // Sets colour scheme from colours and from defined in config file
         const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        return prefersDarkScheme ? schemes.dark : schemes.light;
+
+        if (themePref === "auto") {
+            console.log('auto selected');
+            return prefersDarkScheme ? schemes.dark : schemes.light;
+        }
+  
+        if (themePref === "dark") {
+            console.log('dark selected');
+            return schemes.dark;
+        }
+        
+        if (themePref === "light") {
+            console.log('light selected');
+            return schemes.light;
+        }
+
+        else {
+            return prefersDarkScheme ? schemes.dark : schemes.light; // default to auto if not defined
+        }
+            
     };
 
     const updateColors = async () => {
