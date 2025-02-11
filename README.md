@@ -1,5 +1,5 @@
 ![MWALogo](https://raw.githubusercontent.com/wacko1805/MonetWebAdapter/refs/heads/main/HomePage/assets/images/MWA%20logo.png)
-### MWA allows the Dynamic Wallpaper Colours from android 12 and up on the web! [View Example Site](https://wacko1805.github.io/MonetWebAdapter/)
+### MWA allows the Dynamic Wallpaper Colours from android 12 and up on the web! [View Example Site](https://wacko1805.github.io/MonetWebAdapter/HomePage)
 
 ## How does it work?
 - If the host app is installed on a device, the site will load the dynamic colours from your wallpaper. The app starts a minimal http server that broadcasts the dynamic colours to ``` http://localhost:8192 ```
@@ -198,7 +198,7 @@
   <script src="https://wacko1805.github.io/MonetWebAdapter/popup/popup.js" defer></script>
   ```
 
-  ### Example of the popup can be found [here](https://wacko1805.github.io/MonetWebAdapter/popup-test.html).
+  ### Example of the popup can be found [here](https://jacks.am/MonetWebAdapter/popup/test.html).
 
   
 
