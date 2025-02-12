@@ -1,11 +1,10 @@
-const configFile = 'DWAconfig.json'; // Define your config file here
 const jsonUrl = 'http://localhost:8192/'; // DO NOT CHANGE THIS Defines URL from host app 
+const configFile = 'DWAconfig.json'; // Define your config file here
 
 const basePath = window.location.origin;  
 
 let themePref;  
 let localFilePath;
-let rootPath;
 
 fetch(`${basePath}/${configFile}`)   // gathers data from config file
   .then(response => {
@@ -17,15 +16,15 @@ fetch(`${basePath}/${configFile}`)   // gathers data from config file
   .then(data => {
     localFilePath = data.colours_path;
     themePref = data.theme_pref;
-    rootPath = data.root;
-    fetchColorsAndSetVariables(jsonUrl, rootPath + localFilePath);
+    // console.log(localFilePath);
+    // console.log(themePref);
+    fetchColorsAndSetVariables(jsonUrl, localFilePath);
   })
   .catch(error => {
     console.error('Error fetching the JSON:', error);
     localFilePath = '/colours.json';  // default value 
     themePref = 'auto'; // default value
-    rootPath = "/";
-    fetchColorsAndSetVariables(jsonUrl, rootPath + localFilePath);
+    fetchColorsAndSetVariables(jsonUrl, localFilePath);
   });
 
 async function fetchColorsAndSetVariables(url, localFile) {
@@ -113,4 +112,4 @@ async function fetchColorsAndSetVariables(url, localFile) {
     initialLoad();
 }
 
-fetchColorsAndSetVariables(jsonUrl, rootPath + localFilePath);
+fetchColorsAndSetVariables(jsonUrl, localFilePath);
