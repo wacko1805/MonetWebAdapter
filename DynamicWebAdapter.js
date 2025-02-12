@@ -1,12 +1,13 @@
-const jsonUrl = 'http://localhost:8192/'; // DO NOT CHANGE THIS Defines URL from host app 
 const configFile = 'DWAconfig.json'; // Define your config file here
+const jsonUrl = 'http://localhost:8192/'; // DO NOT CHANGE THIS Defines URL from host app 
 
 const basePath = window.location.origin;  
 
 let themePref;  
 let localFilePath;
+let rootPath;
 
-fetch(`${basePath}/${configFile}`)   // gathers data from config file
+fetch(`${rootPath}/${basePath}/${configFile}`)   // gathers data from config file
   .then(response => {
     if (!response.ok) {
       throw new Error('Config file not found');
@@ -16,14 +17,14 @@ fetch(`${basePath}/${configFile}`)   // gathers data from config file
   .then(data => {
     localFilePath = data.colours_path;
     themePref = data.theme_pref;
-    // console.log(localFilePath);
-    // console.log(themePref);
+    rootPath = data.root;
     fetchColorsAndSetVariables(jsonUrl, localFilePath);
   })
   .catch(error => {
     console.error('Error fetching the JSON:', error);
     localFilePath = '/colours.json';  // default value 
     themePref = 'auto'; // default value
+    rootPath = "/";
     fetchColorsAndSetVariables(jsonUrl, localFilePath);
   });
 

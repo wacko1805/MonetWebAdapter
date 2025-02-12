@@ -1,4 +1,5 @@
 {
     "colours_path": "../colours.json",
-    "theme_pref": "auto"
+    "theme_pref": "auto",
+    "root": "/MonetWebAdapter"
 }
