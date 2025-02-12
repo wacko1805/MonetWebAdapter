@@ -7,7 +7,7 @@ let themePref;
 let localFilePath;
 let rootPath;
 
-fetch(`${rootPath}/${basePath}/${configFile}`)   // gathers data from config file
+fetch(`${basePath}/${configFile}`)   // gathers data from config file
   .then(response => {
     if (!response.ok) {
       throw new Error('Config file not found');
@@ -18,14 +18,14 @@ fetch(`${rootPath}/${basePath}/${configFile}`)   // gathers data from config fil
     localFilePath = data.colours_path;
     themePref = data.theme_pref;
     rootPath = data.root;
-    fetchColorsAndSetVariables(jsonUrl, localFilePath);
+    fetchColorsAndSetVariables(jsonUrl, rootPath + localFilePath);
   })
   .catch(error => {
     console.error('Error fetching the JSON:', error);
     localFilePath = '/colours.json';  // default value 
     themePref = 'auto'; // default value
     rootPath = "/";
-    fetchColorsAndSetVariables(jsonUrl, localFilePath);
+    fetchColorsAndSetVariables(jsonUrl, rootPath + localFilePath);
   });
 
 async function fetchColorsAndSetVariables(url, localFile) {
@@ -113,4 +113,4 @@ async function fetchColorsAndSetVariables(url, localFile) {
     initialLoad();
 }
 
-fetchColorsAndSetVariables(jsonUrl, localFilePath);
+fetchColorsAndSetVariables(jsonUrl, rootPath + localFilePath);
